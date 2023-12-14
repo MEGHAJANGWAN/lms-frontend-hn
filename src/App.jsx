@@ -1,18 +1,21 @@
 
 import './App.css';
 
-import { Routes } from 'react-router-dom';
+// import Footer from './Components/Footer';
+
+// import { Routes } from 'react-router-dom';
 
 function App() {
 
   return (
     <>
-     <Routes>
+     {/* <Routes>
       {/* <Routes path="/" element={<Home />}></Route> */}
-     </Routes>
-     
+     {/* </Routes> */}
+      
+     {/* <Footer /> */}
     </>
   )
 }
 
-export default App
+export default App;
