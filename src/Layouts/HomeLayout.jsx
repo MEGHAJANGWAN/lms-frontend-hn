@@ -8,7 +8,7 @@ import Footer from '../Components/Footer';
 import { logout } from '../Redux/Slices/AuthSlice';
 function HomeLayout({ children }) {
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const navigate = useNavigate();
 
     // for checking if user is logged in
