@@ -45,7 +45,6 @@ function getImage(event) {
         fileReader.addEventListener("load", function () {
             setPreviewImage(this.result);
         })
-
     }
 }
 
@@ -81,7 +80,6 @@ async function createNewAccount(event){
 
     // dispatch create account action
      const response = await dispatch(createAccount(formData));
-     console.log(response);
      if(response?.payload?.success)
      navigate("/");
 
@@ -92,6 +90,8 @@ async function createNewAccount(event){
         avatar: "", 
 });
 setPreviewImage("");
+
+}
 
     return(
        <HomeLayout>
@@ -162,11 +162,11 @@ setPreviewImage("");
                 <p className='text-center'>
                     Already have an account ? <Link to="/login" className="link text-accent cursor-pointer"> Login </Link>
                 </p>
+
             </form>
         </div>
        </HomeLayout>
     );
-}
 }
 
 export default Signup;

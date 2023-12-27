@@ -38,10 +38,8 @@ function HomePage() {
                 </div>
 
             </div>
-            
         </HomeLayout>
-
     );
-
 }
+
 export default HomePage;

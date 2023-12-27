@@ -1,7 +1,6 @@
 import {  useNavigate } from "react-router-dom";
 
 function Denied() {
-
     const navigate = useNavigate();
     return(
         <main className="h-screen w-full flex flex-col justify-center items-center bg-[#1A2238]">
@@ -16,11 +15,8 @@ function Denied() {
                 <span className="relative block px-8 py-3 bg-[#1A2238] border border-current">
                     Go back 
                 </span>
-            
             </button>
-
         </main>
-
     );
 
 }

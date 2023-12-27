@@ -17,7 +17,6 @@ function HomeLayout({ children }) {
     // for displaying the options acc to role
     const role = useSelector((state) => state?.auth?.role);
 
-
     function changeWidth() {
         const drawerSide = document.getElementsByClassName("drawer-side");
         drawerSide[0].style.width = 'auto';
@@ -37,7 +36,6 @@ function HomeLayout({ children }) {
         const res = await dispatch(logout());
         if(res?.payload?.success)
         navigate("/");
-
     }
 
     return (
@@ -71,6 +69,12 @@ function HomeLayout({ children }) {
                             <Link to="/admin/dashboard">Admin Dashboard</Link>
                         </li>
                     )}
+                    {isLoggedIn && role === 'ADMIN' && (
+                        <li>
+                            <Link to="/course/create">Create new course</Link>
+                        </li>
+                    )}
+
 
                     <li>
                         <Link to="/courses">All Courses</Link>
@@ -115,9 +119,7 @@ function HomeLayout({ children }) {
 
         <Footer />
         </div>
-
     );
-
 }
 
 export default HomeLayout;

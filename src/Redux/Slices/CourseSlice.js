@@ -17,11 +17,25 @@ export const getAllCourses = createAsyncThunk("/course/get", async () => {
         });
 
         return (await response).data.courses;
-
         } catch (error) {
         toast.error(error?.response?.data?.message);
     }
 });
+
+export const deleteCourse = createAsyncThunk("/course/delete", async (id) => {
+    try {
+        const response = axiosInstance.delete(`/courses/${id}`);
+        toast.promise(response, {
+            loading: "deleting course ...",
+            success: "Courses deleted successfully",
+            error: "Failed to delete the courses",
+        });
+
+        return (await response).data;
+    } catch(error) {
+        toast.error(error?.response?.data?.message);
+    }
+}); 
 
 export const createNewCourse = createAsyncThunk("/course/create", async (data) =>{
     try{
@@ -38,11 +52,11 @@ export const createNewCourse = createAsyncThunk("/course/create", async (data) =
             success: "Course created successfully",
             error: "Failed to create course",
         });
+
           return (await response).data
 
-    }catch(error) {
+    } catch(error) {
         toast.error(error?.response?.data?.message);
-        return;
     }
 });
 
@@ -52,11 +66,10 @@ const courseSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(getAllCourses.fulfilled, (state, action) => {
-            if(action.payload){
+            if(action.payload) {
                 state.courseData = [...action.payload];
             }
         })
-
     }
 });
 

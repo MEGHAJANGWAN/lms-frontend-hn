@@ -33,13 +33,7 @@ function CourseList() {
                      {courseData?.map((element) => {
                         return <CourseCard key={element._id} data={element} />
                      })}
-
-                
              </div>
-
-
-
-
             </div>
         </HomeLayout>
     );

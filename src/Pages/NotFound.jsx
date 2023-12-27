@@ -16,10 +16,9 @@ function NotFound() {
                       Go Back
                     </span>
                 </a>
-                
             </button>
         </div>
-    )
-
+    );
 }
+
 export default NotFound;

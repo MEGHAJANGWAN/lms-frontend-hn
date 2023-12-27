@@ -4,7 +4,6 @@ import einstein from "../assets/Images/einstein.png";
 import nelsonMandela from "../assets/Images/nelsonMandela.png";
 import steveJobs from "../assets/Images/steveJobs.png";
 
-
 export const celebrities = [
     {
         title: 'Nelson Mandela', 
