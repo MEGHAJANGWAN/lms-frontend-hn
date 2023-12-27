@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import { AiFillCheckCircle } from "react-icons/ai";
+import { RxCrossCircled } from "react-icons/rx";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 import HomeLayout from "../../Layouts/HomeLayout";
 import { getUserData } from "../../Redux/Slices/AuthSlice";
 
-function CheckoutSuccess() {
+function CheckoutFailure() {
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -17,23 +17,23 @@ function CheckoutSuccess() {
         <HomeLayout>
             <div className="min-h-[90vh] flex flex-col justify-center items-center text-white">
                 <div className="w-80 h-[26rem] flex flex-col justify-center items-center shadow-[0_0_10px_black] rounded-lg relative ">
-                   <h1 className="bg-green-500 absolute top-0 w-full py-4 text-2xl text-center font-bold rounded-tl-lg rounded-tr-lg">Payment Successfull</h1>
+                   <h1 className="bg-red-500 absolute top-0 w-full py-4 text-2xl text-center font-bold rounded-tl-lg rounded-tr-lg">Payment Failed</h1>
 
                    <div className="px-4 flex flex-col justify-center items-center space-y-2">
                       <div className="text-center space-y-2">
                         <h2 className="text-lg font-semibold">
-                            Welcome to the pro bundle
+                          Oops ! Your payment failed
                         </h2>
                         <p className="text-left">
-                            Now you can enjoy all the courses.
+                            Please try again later
                         </p>
 
                       </div>
-                      <AiFillCheckCircle className="text-green-500 text-5xl"/>
+                      <RxCrossCircled className="text-red-500 text-5xl"/>
                    </div>
 
-                   <Link to="/" className="bg-green-500 hover:bg-green-600 transition-all ease-in-out duration-300 absolute bottom-0 w-full py-2 text-xl font-bold text-center rounded-br-lg rounded-bl-lg">
-                       <button>Go to dashboard</button>
+                   <Link to="/checkout" className="bg-red-500 hover:bg-red-600 transition-all ease-in-out duration-300 absolute bottom-0 w-full py-2 text-xl font-bold text-center rounded-br-lg rounded-bl-lg">
+                       <button>Try again</button>
                    </Link>
 
                 </div>
@@ -42,4 +42,4 @@ function CheckoutSuccess() {
         </HomeLayout>
     )
 }
-export default CheckoutSuccess;
+export default CheckoutFailure;

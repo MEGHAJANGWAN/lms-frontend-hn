@@ -77,16 +77,21 @@ function Checkout() {
                                 </span> { " " }
                                 All the existing and new launched courses will be also available
                             </p>
+
                             <p className="flex items-center justify-center gap-1 text-2xl font-bold text-yellow-500" >
                                 <BiRupee /> <span> 499</span> only
                             </p>
-
+                            <div className="text-gray-200">
+                                <p>100% refund on cancellation</p>
+                                <p>* Terms and conditions applied *</p>
+                            </div>
+                            <button type="submit" className="bg-yellow-500 hover:bg-yellow-600 transition-all ease-in-out duration-300 w-full absolute botton-0 left-0 text-xl font-bold rounded-bl-lg rounded-br-lg py-2">
+                                  Buy now
+                            </button>
                          </div>
                     </div>
 
             </form>
-
-
         </HomeLayout>
     );
 }
