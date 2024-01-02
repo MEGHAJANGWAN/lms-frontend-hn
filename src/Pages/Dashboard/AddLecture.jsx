@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import HomeLayout from "../../Layouts/HomeLayout";
+import { addCourseLectures } from "../../Redux/Slices/LectureSlice";
 
 function AddLecture() {
 
@@ -47,11 +48,11 @@ function AddLecture() {
         toast.error("All fields are mandatory");
         return;
       }
-      const response = await dispatch(addCourseLecture(userInput));
+      const response = await dispatch(addCourseLectures(userInput));
       if(response?.payload?.success) {
         navigate(-1);
         setUserInput({
-          id: courseDetails._id,
+          id: courseDetails?._id,
           lecture: undefined,
           title: "",
           description: "",

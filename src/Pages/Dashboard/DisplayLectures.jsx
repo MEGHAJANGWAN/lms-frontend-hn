@@ -99,8 +99,8 @@ function DisplayLectures() {
                     role === "ADMIN") && (
                         <button onClick={() => navigate("/course/addlecture", {state: {...state}})}>
                             Add new lecture
-                        </button>}
-                )
+                        </button>
+                        )}
             </div>
 
         </HomeLayout>
